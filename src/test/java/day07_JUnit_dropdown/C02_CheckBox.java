@@ -17,6 +17,7 @@ public class C02_CheckBox {
     WebDriver driver;
    @Before
     public void setup(){
+       // @Before   ve   @After   de static yapmak zorunda değiliz
         WebDriverManager.chromedriver().setup();
         driver= new ChromeDriver();
         driver.manage().window().maximize();

@@ -27,28 +27,32 @@ public class C03_RadioButton {
     }
     @After
     public void teardown(){
-        //driver.close();
+        driver.close();
     }
     @Test
-    public void radioButtonTest(){
+    public void radioButtonTest() throws InterruptedException {
         //a. Verilen web sayfasına gidin.
         //https://facebook.com
         driver.get("https://facebook.com");
+
         //b. Cookies’i kabul edin
         driver.findElement(By.xpath("//button[@title='Tüm çerezlere izin ver']")).click();
 
         //c. Create an account buton’una basin
         driver.findElement(By.xpath("//*[@data-testid='open-registration-form-button']")).click();
+        Thread.sleep(2000);
 
         //d. Radio button elementlerini locate edin ve size uygun olani secin
         WebElement maleButtonElementi=driver.findElement(By.xpath("(//input[@type='radio'])[2]"));
         WebElement femaleButtonElementi=driver.findElement(By.xpath("(//input[@type='radio'])[1]"));
         WebElement customButtonElementi=driver.findElement(By.xpath("(//input[@type='radio'])[3]"));
         maleButtonElementi.click();
+        Thread.sleep(2000);
 
         //e. Sectiginiz radio button’un seçili, ötekilerin seçili olmadigini test edin
         Assert.assertTrue(maleButtonElementi.isSelected());
         Assert.assertFalse(femaleButtonElementi.isSelected());
         Assert.assertFalse(customButtonElementi.isSelected());
+        Thread.sleep(2000);
     }
 }
