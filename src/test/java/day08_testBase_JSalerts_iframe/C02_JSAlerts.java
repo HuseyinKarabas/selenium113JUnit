@@ -1,10 +1,8 @@
 package day08_testBase_JSalerts_iframe;
-
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import utilities.TestBaseBeforeClass;
-
 public class C02_JSAlerts extends TestBaseBeforeClass {
     /*
      Otomasyon yaparken iki tur alert ile karsilasabiliriz
@@ -67,30 +65,30 @@ public class C02_JSAlerts extends TestBaseBeforeClass {
         // - Cancel’a basip, cikan sonuc yazisinin “You clicked: Cancel” oldugunu test edin
         Thread.sleep(3000);
         driver.switchTo().alert().dismiss();
-        Thread.sleep(3000);
         String expectedSonucYazisi="You clicked: Cancel";
-        String actualSonucYazisi=driver.findElement(By.xpath("//*[@id=‘result’]")).getText();
+        String actualSonucYazisi=driver.findElement(By.xpath("//p[@id='result']")).getText();
         Assert.assertEquals(expectedSonucYazisi,actualSonucYazisi);
         Thread.sleep(3000);
-
-
     }
     @Test
-    public void test03(){
+    public void test03() throws InterruptedException {
         //3.Test
         // - https://the-internet.herokuapp.com/javascript_alerts adresine gidin
         driver.get("https://the-internet.herokuapp.com/javascript_alerts");
+        Thread.sleep(3000);
         // - 3.alert’e tiklayalim
         driver.findElement(By.xpath("//button[@onclick='jsPrompt()']")).click();
+        Thread.sleep(3000);
 
         // - Cikan prompt ekranina “Abdullah” yazdiralim
         driver.switchTo().alert().sendKeys("Abdullah");
         // - OK tusuna basarak alert’i kapatalim
         driver.switchTo().alert().accept();
         // - Cikan sonuc yazisinin Abdullah icerdigini test edelim
+        Thread.sleep(3000);
         String expectedIcerik="Abdullah";
         String actualSonucYazisi=driver.findElement(By.xpath("//p[@id='result']")).getText();
         Assert.assertTrue(actualSonucYazisi.contains(expectedIcerik));
-
+        Thread.sleep(3000);
     }
 }
