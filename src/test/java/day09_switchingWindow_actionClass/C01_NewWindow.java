@@ -15,6 +15,7 @@ public class C01_NewWindow extends TestBase {
         //gerekli ayarlamalari yapip amazon anasayfaya gidin
         driver.get("https://www.amazon.com");
         String ilkSayfaWHD= driver.getWindowHandle();
+
         //title'in Amazon kelimesi icerdigini test edin
         String expectedIcerik="Amazon";
         String actualTitle=driver.getTitle();
@@ -25,6 +26,7 @@ public class C01_NewWindow extends TestBase {
         Thread.sleep(3000);
         driver.get("https://www.wisequarter.com");
         String ikinciSayfaWHD=driver.getWindowHandle();
+
         //url'in wisequarter icerdigini test edin
         expectedIcerik="wisequarter";
         String actualUrl=driver.getCurrentUrl();

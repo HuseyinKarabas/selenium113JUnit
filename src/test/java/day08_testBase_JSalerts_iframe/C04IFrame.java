@@ -16,14 +16,17 @@ public class C04IFrame extends TestBase {
         Assert.assertTrue(iFrameYaziElementi.isDisplayed());
         System.out.println(iFrameYaziElementi.getText());
         Thread.sleep(3000);
+
         //    - Text Box’a “Merhaba Dunya!” yazin.
         WebElement frameElementi= driver.findElement(By.xpath("//*[@id='mce_0_ifr']"));
         driver.switchTo().frame(frameElementi);
+
         WebElement textBoxElementi=driver.findElement(By.xpath("//body[@class='mce-content-body ']"));
         Thread.sleep(3000);
         textBoxElementi.clear();
         textBoxElementi.sendKeys("Merhaba Dunya!");
         Thread.sleep(3000);
+
     //    - TextBox’in altinda bulunan “Elemental Selenium” linkini textinin gorunur oldugunu dogrulayin ve  konsolda yazdirin.
         /*
         iframe'e gecis yapilinca driver'i oradan cikis yaptirana kadar driver iframe'in icinde kalir.
