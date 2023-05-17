@@ -1,12 +1,9 @@
 package day12_webTables_excelOtomasyon;
-
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import utilities.TestBase;
-
 import java.util.List;
-
 public class C02_WebTables extends TestBase {
     @Test
     public void test01(){
@@ -53,17 +50,14 @@ public class C02_WebTables extends TestBase {
            System.out.println("Kierra'nin maasi: "+salary.getText());
        }
         }
-
    //10. bir method olusturun , satir ve sutun sayisini girdigimde bana datayi yazdirsin
         dataYazdir(2,3);
     }
-
     private void dataYazdir(int satirNo, int sutunNo) {
         String dinamikXpath="(//div[@role='row'])["+satirNo+"]/div["+sutunNo+"]" ;
         WebElement istenenElement=driver.findElement(By.xpath(dinamikXpath));
         System.out.println("Istenen hucredeki data : "+istenenElement.getText());
     }
-
     public String  getDinamikXpath(int satirNo,int sutunNo){
         return "(//div[@role='row'])["+satirNo+"]/div["+sutunNo+"]" ;
     }

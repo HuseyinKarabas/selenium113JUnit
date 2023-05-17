@@ -19,7 +19,7 @@ public class C05_FileDownloadTest extends TestBase {
 
         //4. Dosyanın başarıyla indirilip indirilmediğini test edelim
         // Dosyayi Downloads klasorune indirecek
-        String dosyaYolu= "C:/Users/husey/İndirilenler/foto.png";
+        String dosyaYolu= "C:\\Users\\husey\\Desktop";
         //C:\Users\husey\Downloads
         Assert.assertTrue(Files.exists(Paths.get(dosyaYolu)));
         // herkesin bilgisayarinda farkli bir dosya hiyerarsisi oldugundan

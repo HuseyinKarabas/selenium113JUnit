@@ -1,5 +1,4 @@
 package day11_seleniumWaits_Cookies_webTables;
-
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.Assert;
 import org.junit.Test;
@@ -9,11 +8,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.time.Duration;
-
 public class C02_ExplicitlyWait {
-
     @Test
     public void test01(){
         WebDriverManager.chromedriver().setup();

@@ -28,6 +28,7 @@ public class C07_FileUploadTesti extends TestBase {
         String herkesteAyniOlan = "/src/test/java/day10_actionsClass_Faker_FileTestleri/deneme.txt";
         String dosyaYolu= herkesteFarkliOlan+herkesteAyniOlan;
         chooseFileButonu.sendKeys(dosyaYolu);
+        Thread.sleep(3000);
 
         //Upload butonuna basalim.
         driver.findElement(By.id("file-submit")).click();
