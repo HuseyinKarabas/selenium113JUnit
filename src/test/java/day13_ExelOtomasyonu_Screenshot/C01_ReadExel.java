@@ -9,7 +9,6 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Map;
 import java.util.TreeMap;
-
 public class C01_ReadExel {
     @Test
     public void test01() throws IOException {
@@ -60,7 +59,7 @@ public class C01_ReadExel {
             String key = sheet.getRow(i).getCell(0).toString();
             String value =  sheet.getRow(i).getCell(1).toString()+ ", " +
                     sheet.getRow(i).getCell(2).toString()+ ", " +
-                    sheet.getRow(i).getCell(3).toString();
+                    sheet.getRow(i).getCell(3).toString()+ "\n ";
             ulkelerMap.put(key,value);
         }
         System.out.println(ulkelerMap);
